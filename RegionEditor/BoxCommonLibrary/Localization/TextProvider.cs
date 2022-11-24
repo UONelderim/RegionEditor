@@ -9,25 +9,16 @@
 
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.IO;
 using System.Xml;
-using System.Reflection;
 
 namespace TheBox.Common.Localization
 {
     [Serializable]
-    /// <summary>
-    /// Provides localized text elements for the box
-    /// </summary>
     public class TextProvider
     {
         private Dictionary<string, Dictionary<string, string>> m_Sections;
         private string m_Language;
-
-        /// <summary>
-        /// Gets the text associated with the specified resource
-        /// </summary>
+        
         public string this[string description]
         {
             get
@@ -61,49 +52,29 @@ namespace TheBox.Common.Localization
                 Add(value, locate[0], locate[1]);
             }
         }
-
-
-
-        /// <summary>
-        /// Gets or sets a string identifying the language represented by the text provider
-        /// </summary>
+        
         public string Language
         {
-            get { return m_Language; }
-            set { m_Language = value; }
+            get => m_Language;
+            set => m_Language = value;
         }
-
-        /// <summary>
-        /// Gets or sets the data collection (sections) for this text provider
-        /// </summary>
+        
         public Dictionary<string, Dictionary<string, string>> Data
         {
-            get { return m_Sections; }
-            set { m_Sections = value; }
+            get => m_Sections;
+            set => m_Sections = value;
         }
-
-        /// <summary>
-        /// Creates a new TextProvider object
-        /// </summary>
+        
         public TextProvider()
         {
             m_Sections = new Dictionary<string, Dictionary<string, string>>();
         }
-
-        /// <summary>
-        /// Deletes a section contained in the TextProvider
-        /// </summary>
-        /// <param name="name">The name of the section that will be deleted</param>
+        
         public void DeleteSection(string name)
         {
             m_Sections.Remove(name);
         }
-
-        /// <summary>
-        /// Removes an item from the TextProvider
-        /// </summary>
-        /// <param name="section">The section the item belongs to</param>
-        /// <param name="item">The item name</param>
+        
         public void RemoveItem(string section, string item)
         {
             Dictionary<string, string> hash;
@@ -114,11 +85,7 @@ namespace TheBox.Common.Localization
                 hash.Remove(item);
             }
         }
-
-        /// <summary>
-        /// Removes an item from the TextProvider
-        /// </summary>
-        /// <param name="definition">The full item definition</param>
+        
         public void RemoveItem(string definition)
         {
             string[] loc = definition.Split(new char[] { '.' });
@@ -150,11 +117,7 @@ namespace TheBox.Common.Localization
         }
 
         #region serialization
-
-        /// <summary>
-        /// Saves the contents of the TextProvider to file
-        /// </summary>
-        /// <param name="filename"></param>
+        
         public void Serialize(string filename)
         {
             XmlDocument dom = new XmlDocument();
@@ -205,12 +168,7 @@ namespace TheBox.Common.Localization
 
             dom.Save(filename);
         }
-
-        /// <summary>
-        /// Reads a TextProvider item from an Xml document
-        /// </summary>
-        /// <param name="dom">The XmlDocument containing the object</param>
-        /// <returns>A TextProvider object</returns>
+        
         public static TextProvider Deserialize(XmlDocument dom)
         {
             XmlNode data = dom.ChildNodes[1];

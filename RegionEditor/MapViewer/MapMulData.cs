@@ -19,7 +19,6 @@
  *///////////////////////////////////////////////////////////////////////////////////////////
 using System;
 using System.IO;
-using System.Collections;
 using System.Runtime.InteropServices;
 
 namespace TheBox.MulData
@@ -51,10 +50,7 @@ namespace TheBox.MulData
 		/// <summary>
 		/// Gets the size of a MapCell object
 		/// </summary>
-		public static int Size
-		{
-			get { return 3;}
-		}
+		public static int Size => 3;
 	}
 
 	/// <summary>
@@ -87,10 +83,7 @@ namespace TheBox.MulData
 		/// <summary>
 		/// Gets the size of a MapBlock object
 		/// </summary>
-		public static int Size
-		{
-			get { return 196; }
-		}
+		public static int Size => 196;
 
 		/// <summary>
 		/// Reads a MapBlock from a stream
@@ -146,11 +139,7 @@ namespace TheBox.MulData
 		/// <summary>
 		/// Gets the size of a StaticIdx object
 		/// </summary>
-		public static int Size
-		{
-			get
-			{ return 12;}
-		}
+		public static int Size => 12;
 
 		/// <summary>
 		/// Reads a StaticIdx object from a stream
@@ -211,10 +200,7 @@ namespace TheBox.MulData
 		/// <summary>
 		/// Gets the size of a StaticData object
 		/// </summary>
-		public static int Size
-		{
-			get { return 7;}
-		}
+		public static int Size => 7;
 
 		/// <summary>
 		/// Reads StaticData from a stream

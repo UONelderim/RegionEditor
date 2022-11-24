@@ -1,12 +1,8 @@
-using System;
 using System.IO;
 using System.Xml.Serialization;
 
 namespace RegionEditor
 {
-    /// <summary>
-    /// Summary description for RegEdOptions.
-    /// </summary>
     public class RegEdOptions
     {
         public string ClientPath = "";
@@ -29,7 +25,7 @@ namespace RegionEditor
 
             XmlSerializer serializer = new XmlSerializer(typeof(RegEdOptions));
             FileStream theStream = new FileStream(FileName, FileMode.Create);
-            serializer.Serialize(theStream, (RegEdOptions)Options);
+            serializer.Serialize(theStream, Options);
             theStream.Close();
         }
 

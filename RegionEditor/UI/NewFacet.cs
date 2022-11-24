@@ -1,7 +1,3 @@
-using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace RegionEditor
@@ -200,13 +196,7 @@ namespace RegionEditor
 			this.Close();
 		}
 
-		public string FacetName
-		{
-			get
-			{
-				return m_FacetName.Text;
-			}
-		}
+		public string FacetName => m_FacetName.Text;
 
 		public int Mapfile
 		{

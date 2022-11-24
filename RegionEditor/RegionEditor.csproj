@@ -177,10 +177,6 @@
     <None Include="MapViewer\Documentation\.svn\prop-base\vssver.scc.svn-base" />
     <None Include="MapViewer\Documentation\.svn\text-base\Readme.htm.svn-base" />
     <None Include="MapViewer\Documentation\.svn\text-base\vssver.scc.svn-base" />
-    <None Include="MapViewer\Documentation\vssver.scc" />
-    <None Include="MapViewer\mssccprj.scc" />
-    <None Include="MapViewer\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="MapViewer\vssver.scc" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -219,7 +215,6 @@
     <Folder Include="MapViewer\Documentation\.svn\tmp\prop-base\" />
     <Folder Include="MapViewer\Documentation\.svn\tmp\props\" />
     <Folder Include="MapViewer\Documentation\.svn\tmp\text-base\" />
-    <Folder Include="MapViewer\obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

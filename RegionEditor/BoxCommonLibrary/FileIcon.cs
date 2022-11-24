@@ -4,17 +4,8 @@ using System.Drawing;
 
 namespace TheBox.Common
 {
-	/// <summary>
-	/// Enables extraction of icons for any file type from
-	/// the Shell.
-	/// </summary>
 	public class FileIcon : IDisposable
 	{
-		/// <summary>
-		/// Gets the small icon for a file
-		/// </summary>
-		/// <param name="file">The path to the file</param>
-		/// <returns>An Icon object with the file icon</returns>
 		public static Icon GetSmallIcon( string file )
 		{
 			FileIcon fi = new FileIcon( file );
@@ -187,14 +178,8 @@ namespace TheBox.Common
 		/// </summary>
 		public FileIcon.SHGetFileInfoConstants Flags
 		{
-			get
-			{
-				return flags;
-			}
-			set
-			{
-				flags = value;
-			}
+			get => flags;
+			set => flags = value;
 		}
 
 		/// <summary>
@@ -202,50 +187,26 @@ namespace TheBox.Common
 		/// </summary>
 		public string FileName
 		{
-			get
-			{
-				return fileName;
-			}
-			set
-			{
-				fileName = value;
-			}
+			get => fileName;
+			set => fileName = value;
 		}
 
 		/// <summary>
 		/// Gets the icon for the chosen file
 		/// </summary>
-		public Icon ShellIcon
-		{
-			get
-			{
-				return fileIcon;
-			}
-		}
+		public Icon ShellIcon => fileIcon;
 
 		/// <summary>
 		/// Gets the display name for the selected file
 		/// if the SHGFI_DISPLAYNAME flag was set.
 		/// </summary>
-		public string DisplayName
-		{
-			get
-			{
-				return displayName;
-			}
-		}
+		public string DisplayName => displayName;
 
 		/// <summary>
 		/// Gets the type name for the selected file
 		/// if the SHGFI_TYPENAME flag was set.
 		/// </summary>
-		public string TypeName
-		{
-			get
-			{
-				return typeName;
-			}
-		}
+		public string TypeName => typeName;
 
 		/// <summary>
 		///  Gets the information for the specified 

@@ -1,9 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml;
-
-using TheBox;
 using TheBox.MapViewer;
 
 namespace RegionEditor

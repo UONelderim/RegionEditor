@@ -1,9 +1,6 @@
 using System;
 using System.IO;
-using System.Text;
 using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace TheBox.Common

@@ -23,10 +23,7 @@ namespace TheBox.Mul
 		/// <summary>
 		/// Gets the hue groups
 		/// </summary>
-		public HueGroup[] Groups
-		{
-			get { return m_Groups; }
-		}
+		public HueGroup[] Groups => m_Groups;
 
 		/// <summary>
 		/// Creates an empty Hues object
@@ -112,8 +109,8 @@ namespace TheBox.Mul
 		/// </summary>
 		public Hue[] HueList
 		{
-			get { return m_Hues; }
-			set { m_Hues = value; }
+			get => m_Hues;
+			set => m_Hues = value;
 		}
 
 		/// <summary>
@@ -150,8 +147,8 @@ namespace TheBox.Mul
 		/// </summary>
 		public short[] ColorTable
 		{
-			get { return m_ColorTable; }
-			set { m_ColorTable = value; }
+			get => m_ColorTable;
+			set => m_ColorTable = value;
 		}
 
 		/// <summary>
@@ -182,7 +179,7 @@ namespace TheBox.Mul
 		/// </summary>
 		public string Name
 		{
-			get { return new string( m_Name ); }
+			get => new string( m_Name );
 			set
 			{
 				string name = value;

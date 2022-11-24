@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Windows.Forms;
 
 namespace RegionEditor
@@ -796,7 +792,7 @@ namespace RegionEditor
         private bool m_GuardsDisabled;
         private bool m_SmartNoHousing;
 
-		public RegionActions Action { get { return m_Action; } }
+		public RegionActions Action => m_Action;
 
 		public object Data
 		{

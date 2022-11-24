@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Windows.Forms;
 using TheBox.Mul;
 
@@ -28,10 +25,7 @@ namespace TheBox.Common
 		/// </summary>
 		public TheBox.Mul.Hues Hues
 		{
-			get
-			{
-				return m_Hues;
-			}
+			get => m_Hues;
 			set
 			{
 				m_Hues = value;
@@ -44,10 +38,7 @@ namespace TheBox.Common
 		/// </summary>
 		public int SelectedIndex
 		{
-			get
-			{
-				return m_SelectedIndex;
-			}
+			get => m_SelectedIndex;
 			set
 			{
 				if ( value > 0 && value < 3001 )
@@ -67,20 +58,14 @@ namespace TheBox.Common
 		/// <summary>
 		/// Gets the selected Hue object
 		/// </summary>
-		public Hue SelectedHue
-		{
-			get
-			{
-				return m_Hues[ m_SelectedIndex ];
-			}
-		}
+		public Hue SelectedHue => m_Hues[ m_SelectedIndex ];
 
 		/// <summary>
 		/// Gets or sets the value that specifies which color from each hue is used to draw the hue
 		/// </summary>
 		public int ColorTableIndex
 		{
-			get { return m_ColorTableIndex; }
+			get => m_ColorTableIndex;
 			set
 			{
 				if ( m_ColorTableIndex == value )

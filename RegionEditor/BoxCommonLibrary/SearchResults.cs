@@ -38,10 +38,7 @@ namespace TheBox.Common
 		/// <summary>
 		/// Gets the number of results found by the search
 		/// </summary>
-		public int Count
-		{
-			get { return m_Results.Count; }
-		}
+		public int Count => m_Results.Count;
 
 		/// <summary>
 		/// Gets the next result in the list
@@ -109,8 +106,8 @@ namespace TheBox.Common
 		/// </summary>
 		public TreeNode Node
 		{
-			get { return m_Node; }
-			set { m_Node = value; }
+			get => m_Node;
+			set => m_Node = value;
 		}
 
 		/// <summary>
@@ -118,8 +115,8 @@ namespace TheBox.Common
 		/// </summary>
 		public int Index
 		{
-			get { return m_Index; }
-			set { m_Index = value; }
+			get => m_Index;
+			set => m_Index = value;
 		}
 
 		#region IComparable Members

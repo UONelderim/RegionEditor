@@ -28,8 +28,8 @@ namespace TheBox.Data
 		[ XmlAttribute ]
 		public byte MapValue
 		{
-			get { return m_Map; }
-			set { m_Map = value; }
+			get => m_Map;
+			set => m_Map = value;
 		}
 
 		/// <summary>
@@ -40,8 +40,8 @@ namespace TheBox.Data
 		public List<GenericNode> Nodes
 		// Issue 10 - End
 		{
-			get { return m_Nodes; }
-			set { m_Nodes = value; }
+			get => m_Nodes;
+			set => m_Nodes = value;
 		}
 
 		/// <summary>

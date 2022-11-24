@@ -50,7 +50,7 @@ namespace TheBox.Common
 		/// </summary>
 		public static string CustomClientPath
 		{
-			get { return m_CustomClientPath; }
+			get => m_CustomClientPath;
 			set
 			{
 				if ( value == null || File.Exists( value ) )

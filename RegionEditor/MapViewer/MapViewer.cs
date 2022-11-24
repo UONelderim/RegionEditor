@@ -23,10 +23,8 @@ using System.Collections.Generic;
 // Issue 10 - End
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Windows.Forms;
 using System.IO;
-using Microsoft.Win32;
 using TheBox.MapViewer.DrawObjects;
 using TheBox.MulData;
 using TheBox.Common;
@@ -845,8 +843,8 @@ namespace TheBox.MapViewer
 		[ Category( "Settings" ), Description( "Specifies the navigation style on the map viewer" ) ]
 		public MapNavigation Navigation
 		{
-			get { return m_Navigation; }
-			set { m_Navigation = value; }
+			get => m_Navigation;
+			set => m_Navigation = value;
 		}
 
 		/// <summary>
@@ -856,10 +854,7 @@ namespace TheBox.MapViewer
 		[ Category( "Settings" ), Description( "Specifies whether the view should be rotated" ) ]
 		public bool RotateView
 		{
-			get
-			{
-				return m_ViewInfo.RotateView;
-			}
+			get => m_ViewInfo.RotateView;
 			set
 			{
 				if ( m_ViewInfo.RotateView != value )
@@ -880,10 +875,7 @@ namespace TheBox.MapViewer
 		]
 		public int ZoomLevel
 		{
-			get
-			{
-				return m_ViewInfo.ZoomLevel;
-			}
+			get => m_ViewInfo.ZoomLevel;
 			set
 			{
 				if ( m_ViewInfo.ZoomLevel == value )
@@ -914,10 +906,7 @@ namespace TheBox.MapViewer
 		]
 		public bool DrawStatics
 		{
-			get
-			{
-				return m_drawStatics;
-			}
+			get => m_drawStatics;
 			set
 			{
 				if ( m_drawStatics != value )
@@ -933,49 +922,25 @@ namespace TheBox.MapViewer
 		/// Gets the width of the current map
 		/// </summary>
 		[ Browsable( false ) ]
-		public int MapWidth
-		{
-			get
-			{
-				return m_ViewInfo.MapSize.Width;
-			}
-		}
+		public int MapWidth => m_ViewInfo.MapSize.Width;
 
 		/// <summary>
 		/// Gets the height of the current map
 		/// </summary>
 		[ Browsable( false ) ]
-		public int MapHeight
-		{
-			get
-			{
-				return m_ViewInfo.MapSize.Height;
-			}
-		}
+		public int MapHeight => m_ViewInfo.MapSize.Height;
 
 		/// <summary>
 		/// Gets the number of horizontal map blocks for the current map
 		/// </summary>
 		[ Browsable( false ) ]
-		private int XBlocks
-		{
-			get
-			{
-				return m_ViewInfo.MapSize.Width / 8;
-			}
-		}
+		private int XBlocks => m_ViewInfo.MapSize.Width / 8;
 
 		/// <summary>
 		/// Gets the number of vertical map blocks for the current map
 		/// </summary>
 		[ Browsable( false ) ]
-		private int YBlocks
-		{
-			get
-			{
-				return m_ViewInfo.MapSize.Height / 8;
-			}
-		}
+		private int YBlocks => m_ViewInfo.MapSize.Height / 8;
 
 		/// <summary>
 		/// Gets or sets the coordinates of the center of the map
@@ -996,10 +961,7 @@ namespace TheBox.MapViewer
 					OnMapLocationChanged( new EventArgs() );
 				}
 			}
-			get
-			{
-				return m_ViewInfo.Center;
-			}
+			get => m_ViewInfo.Center;
 		}
 
 		/// <summary>
@@ -1011,10 +973,7 @@ namespace TheBox.MapViewer
 		]
 		public Maps Map
 		{
-			get
-			{
-				return m_Map;
-			}
+			get => m_Map;
 			set
 			{
 				if ( value != m_Map )
@@ -1040,14 +999,8 @@ namespace TheBox.MapViewer
 		]
 		public bool DisplayErrors
 		{
-			get
-			{
-				return m_DisplayErrors;
-			}
-			set
-			{
-				m_DisplayErrors = value;
-			}
+			get => m_DisplayErrors;
+			set => m_DisplayErrors = value;
 		}
 
 		/// <summary>
@@ -1059,10 +1012,7 @@ namespace TheBox.MapViewer
 		]
 		public bool ShowCross
 		{
-			get
-			{
-				return m_ShowCross;
-			}
+			get => m_ShowCross;
 			set
 			{
 				if ( m_ShowCross != value )
@@ -1081,8 +1031,8 @@ namespace TheBox.MapViewer
 		public List<IMapDrawable> DrawObjects
 		// Issue 10 - End
 		{
-			get { return m_DrawObjects; }
-			set { m_DrawObjects = value; }
+			get => m_DrawObjects;
+			set => m_DrawObjects = value;
 		}
 
 		/// <summary>
@@ -1100,7 +1050,7 @@ namespace TheBox.MapViewer
 
 				return m_MulManager;
 			}
-			set { m_MulManager = value; }
+			set => m_MulManager = value;
 		}
 
 		/// <summary>
@@ -1118,7 +1068,7 @@ namespace TheBox.MapViewer
 
 				return m_MulManager;
 			}
-			set { m_MulManager = value; }
+			set => m_MulManager = value;
 		}
 
 		/// <summary>
@@ -1127,8 +1077,8 @@ namespace TheBox.MapViewer
 		[ Category( "Settings" ), Description( "States whether the map viewer will use mouse wheel zoom input for zooming." ) ]
 		public bool WheelZoom
 		{
-			get { return m_WheelZoom; }
-			set { m_WheelZoom = value; }
+			get => m_WheelZoom;
+			set => m_WheelZoom = value;
 		}
 
 		/// <summary>
@@ -1137,7 +1087,7 @@ namespace TheBox.MapViewer
 		[ Category( "Settings" ), Description( "Enables X-Ray view where statics below the ground are displayed" ) ]
 		public bool XRayView
 		{
-			get { return m_XRayView; }
+			get => m_XRayView;
 			set
 			{
 				if ( m_XRayView != value )

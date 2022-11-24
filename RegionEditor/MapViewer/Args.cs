@@ -15,23 +15,17 @@ namespace TheBox.MapViewer
 	public class DrawObjectEventArgs : EventArgs
 	{
 		private IMapDrawable m_DrawObject;
-		private System.Drawing.Point m_Point;
+		private Point m_Point;
 
 		/// <summary>
 		/// Gets the IMapDrawable object contained in this args
 		/// </summary>
-		public IMapDrawable DrawObject
-		{
-			get { return m_DrawObject; }
-		}
+		public IMapDrawable DrawObject => m_DrawObject;
 
 		/// <summary>
 		/// Gets the location on the control surface of the draw object
 		/// </summary>
-		public Point Point
-		{
-			get { return m_Point; }
-		}
+		public Point Point => m_Point;
 
 		/// <summary>
 		/// Creates a new EventArgs for use with draw objects

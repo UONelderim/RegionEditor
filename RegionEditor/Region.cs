@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Xml;
-using System.Drawing;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace RegionEditor
@@ -38,43 +36,43 @@ namespace RegionEditor
         #region Setters & Getters
         public XmlBool GuardsDisabled
         {
-            get { return m_GuardsDisabled; }
-            set { m_GuardsDisabled = value; }
+            get => m_GuardsDisabled;
+            set => m_GuardsDisabled = value;
         }
 
         public ArrayList SubRegions
         {
-            get { return m_SubRegions; }
-            set { m_SubRegions = value; }
+            get => m_SubRegions;
+            set => m_SubRegions = value;
         }
 
         public ArrayList Area
         {
-            get { return m_Area; }
-            set { m_Area = value; }
+            get => m_Area;
+            set => m_Area = value;
         }
 
         public XmlBool LogoutDelayActive
         {
-            get { return m_LogoutDelayActive; }
-            set { m_LogoutDelayActive = value; }
+            get => m_LogoutDelayActive;
+            set => m_LogoutDelayActive = value;
         }
 
         public XmlBool SmartNoHousing
         {
-            get { return m_SmartNoHousing; }
-            set { m_SmartNoHousing = value; }
+            get => m_SmartNoHousing;
+            set => m_SmartNoHousing = value;
         }
 
         public string RuneName
         {
-            get { return m_Rune; }
-            set { m_Rune = value; }
+            get => m_Rune;
+            set => m_Rune = value;
         }
 
         public int MaxZ
         {
-            get { return m_MaxZ; }
+            get => m_MaxZ;
             set
             {
                 int oldValue = m_MaxZ;
@@ -105,7 +103,7 @@ namespace RegionEditor
 
         public int MinZ
         {
-            get { return m_MinZ; }
+            get => m_MinZ;
             set
             {
                 int oldValue = m_MinZ;
@@ -136,32 +134,32 @@ namespace RegionEditor
 
         public String MusicName
         {
-            get { return m_Music; }
-            set { m_Music = value; }
+            get => m_Music;
+            set => m_Music = value;
         }
 
         public Point3D GoLocation
         {
-            get { return m_GoLocation; }
-            set { m_GoLocation = value; }
+            get => m_GoLocation;
+            set => m_GoLocation = value;
         }
 
         public string Name
         {
-            get { return m_Name; }
-            set { m_Name = value; }
+            get => m_Name;
+            set => m_Name = value;
         }
 
         public int Priority
         {
-            get { return m_Priority; }
-            set { m_Priority = value; }
+            get => m_Priority;
+            set => m_Priority = value;
         }
 
         public string TypeName
         {
-            get { return m_Type; }
-            set { m_Type = value; }
+            get => m_Type;
+            set => m_Type = value;
         }
         #endregion
 

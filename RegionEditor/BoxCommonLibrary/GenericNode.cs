@@ -23,8 +23,8 @@ namespace TheBox.Common
 		[ XmlAttribute ]
 		public string Name
 		{
-			get { return m_Name; }
-			set { m_Name = value; }
+			get => m_Name;
+			set => m_Name = value;
 		}
 
 		/// <summary>
@@ -34,8 +34,8 @@ namespace TheBox.Common
 		public List<object>  Elements
 		// Issue 10 - End
 		{
-			get { return m_Elements; }
-			set { m_Elements = value; }
+			get => m_Elements;
+			set => m_Elements = value;
 		}
 
 		/// <summary>

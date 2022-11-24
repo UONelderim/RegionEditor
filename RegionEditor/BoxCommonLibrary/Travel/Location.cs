@@ -24,8 +24,8 @@ namespace TheBox.Data
 		[ XmlAttribute ]
 		public string Name
 		{
-			get { return m_Name; }
-			set { m_Name = value; }
+			get => m_Name;
+			set => m_Name = value;
 		}
 
 		/// <summary>
@@ -34,8 +34,8 @@ namespace TheBox.Data
 		[ XmlAttribute ]
 		public short X
 		{
-			get { return m_X; }
-			set { m_X = value; }
+			get => m_X;
+			set => m_X = value;
 		}
 
 		/// <summary>
@@ -44,8 +44,8 @@ namespace TheBox.Data
 		[ XmlAttribute ]
 		public short Y
 		{
-			get { return m_Y; }
-			set { m_Y = value; }
+			get => m_Y;
+			set => m_Y = value;
 		}
 
 		/// <summary>
@@ -54,8 +54,8 @@ namespace TheBox.Data
 		[ XmlAttribute ]
 		public sbyte Z
 		{
-			get { return m_Z; }
-			set { m_Z = value; }
+			get => m_Z;
+			set => m_Z = value;
 		}
 
 		/// <summary>
@@ -63,8 +63,8 @@ namespace TheBox.Data
 		/// </summary>
 		public int Map
 		{
-			get { return m_Map; }
-			set { m_Map = (byte) value; }
+			get => m_Map;
+			set => m_Map = (byte) value;
 		}
 
 		/// <summary>

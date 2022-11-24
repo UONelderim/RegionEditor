@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Xml;
 using System.Xml.Serialization;
 using System.Collections.Specialized;
 // Issues 43 - Problems when the client path isn't found - http://code.google.com/p/pandorasbox3/issues/detail?id=43 - Smjert
@@ -121,10 +120,7 @@ namespace TheBox.Common
         /// <summary>
         /// Gets the files supported by Pandora's Box
         /// </summary>
-        public string[] SupportedFiles
-        {
-            get { return m_Files; }
-        }
+        public string[] SupportedFiles => m_Files;
 
         private string m_2DFolder;
         private string m_CustomFolder;
@@ -156,8 +152,8 @@ namespace TheBox.Common
         [XmlAttribute]
         public string CustomFolder
         {
-            get { return m_CustomFolder; }
-            set { m_CustomFolder = value; }
+            get => m_CustomFolder;
+            set => m_CustomFolder = value;
         }
 
         /// <summary>
@@ -320,14 +316,8 @@ namespace TheBox.Common
         [XmlIgnore]
         public string this[string format, params object[] args]
         {
-            get
-            {
-                return this[string.Format(format, args)];
-            }
-            set
-            {
-                this[string.Format(format, args)] = value;
-            }
+            get => this[string.Format(format, args)];
+            set => this[string.Format(format, args)] = value;
         }
     }
 }

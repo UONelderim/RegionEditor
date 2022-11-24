@@ -3,12 +3,10 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using System.Data;
 using System.Xml;
 using System.IO;
 using TheBox.MapViewer;
 using TheBox.MapViewer.DrawObjects;
-using System.Collections.Generic;
 
 namespace RegionEditor
 {
@@ -646,20 +644,14 @@ namespace RegionEditor
         /// <summary>
         /// Gets the location for all the property panels
         /// </summary>
-        private Point PanelLocation
-        {
-            get { return new Point(232, 8); }
-        }
+        private Point PanelLocation => new Point(232, 8);
 
         /// <summary>
         /// Gets or sets the currently selected rectangle
         /// </summary>
         private MapRectangle3D SelectedRect
         {
-            get
-            {
-                return m_SelectedRect;
-            }
+            get => m_SelectedRect;
             set
             {
                 // There's a selection locked - don't change anything
@@ -699,10 +691,7 @@ namespace RegionEditor
         /// </summary>
         private MapRectangle3D DrawingRect
         {
-            get
-            {
-                return m_DrawRect;
-            }
+            get => m_DrawRect;
             set
             {
                 if (value == m_DrawRect)
@@ -770,10 +759,7 @@ namespace RegionEditor
 
         private ArrayList DisplayedRects
         {
-            get
-            {
-                return m_DisplayedRects;
-            }
+            get => m_DisplayedRects;
             set
             {
                 // First clear existing rects
@@ -842,7 +828,7 @@ namespace RegionEditor
                     case "ilshenar":                        
                         tFacet.Tag = 2;
                         break;
-                    case "ýlshenar":
+                    case "ï¿½lshenar":
                         tFacet.Tag = 2;
                         break;
                     case "malas":

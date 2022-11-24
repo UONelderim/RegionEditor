@@ -41,8 +41,8 @@ namespace TheBox.Common
 		[ System.Xml.Serialization.XmlAttribute ]
 		public int Capacity
 		{
-			get { return m_Capacity; }
-			set { m_Capacity = value; }
+			get => m_Capacity;
+			set => m_Capacity = value;
 		}
 
 		/// <summary>
@@ -52,8 +52,8 @@ namespace TheBox.Common
 		public List<object> List
 		// Issue 10 - End
 		{
-			get { return m_List; }
-			set { m_List = value; }
+			get => m_List;
+			set => m_List = value;
 		}
 
 		/// <summary>

@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Windows.Forms;
 
 namespace RegionEditor
@@ -219,39 +214,21 @@ namespace RegionEditor
 		/// <summary>
 		/// This is the new name of the facet for the Rename action, or the name of the new region for the add region action
 		/// </summary>
-		public string Name
-		{
-			get
-			{
-				return m_Name;
-			}
-		}
+		public string Name => m_Name;
 
 		private FacetActions m_Action;
 
 		/// <summary>
 		/// Gets the facet action for this event args
 		/// </summary>
-		public FacetActions Action
-		{
-			get
-			{
-				return m_Action;
-			}
-		}
+		public FacetActions Action => m_Action;
 
 		private bool m_FocusRegion = false;
 
 		/// <summary>
 		/// Gets a value stating whether the program focus should go to the new region added
 		/// </summary>
-		public bool FocusRegion
-		{
-			get
-			{
-				return m_FocusRegion;
-			}
-		}
+		public bool FocusRegion => m_FocusRegion;
 
 		/// <summary>
 		/// Creates a new FacetEventArgs object

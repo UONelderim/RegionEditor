@@ -17,8 +17,8 @@ namespace TheBox.Common
 		/// </summary>
 		public StringCollection List
 		{
-			get { return m_List; }
-			set { m_List = value; }
+			get => m_List;
+			set => m_List = value;
 		}
 
 		/// <summary>
@@ -27,7 +27,7 @@ namespace TheBox.Common
 		[ System.Xml.Serialization.XmlAttribute ]
 		public int Capacity
 		{
-			get { return m_Capacity; }
+			get => m_Capacity;
 			set
 			{
 				m_Capacity = value;

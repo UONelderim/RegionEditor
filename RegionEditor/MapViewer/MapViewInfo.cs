@@ -205,60 +205,37 @@ namespace TheBox.MapViewer
 		/// <summary>
 		/// Gets the bounds of the visible map region
 		/// </summary>
-		internal Rectangle Bounds
-		{
-			get
-			{
-				return m_Bounds;
-			}
-		}
+		internal Rectangle Bounds => m_Bounds;
 
 		/// <summary>
 		/// Gets the width in pixels of the leftmost cell on the control
 		/// </summary>
-		internal int LeftCell
-		{
-			get { return m_LeftPixels; }
-		}
+		internal int LeftCell => m_LeftPixels;
 
 		/// <summary>
 		/// Gets the height in pixels of the topmost cell on the control
 		/// </summary>
-		internal int TopCell
-		{
-			get { return m_TopPixels; }
-		}
+		internal int TopCell => m_TopPixels;
+
 		/// <summary>
 		/// Gets the number of cells displayed for each block
 		/// </summary>
-		internal int CellsPerBlock
-		{
-			get { return m_CellsPerBlock; }
-		}
+		internal int CellsPerBlock => m_CellsPerBlock;
 
 		/// <summary>
 		/// Gets the number of pixels used to display each cell
 		/// </summary>
-		internal int PixelsPerCell
-		{
-			get { return m_PixelsPerCell; }
-		}
+		internal int PixelsPerCell => m_PixelsPerCell;
 
 		/// <summary>
 		/// Gets the number of X blocks read into the array
 		/// </summary>
-		internal int ValidXBlocks
-		{
-			get { return m_ValidXBlocks; }
-		}
+		internal int ValidXBlocks => m_ValidXBlocks;
 
 		/// <summary>
 		/// Gets the number of Y blocks read into the array
 		/// </summary>
-		internal int ValidYBlocks
-		{
-			get { return m_ValidYBlocks; }
-		}
+		internal int ValidYBlocks => m_ValidYBlocks;
 
 		/// <summary>
 		/// Sets the point corresponding to the center of the control
@@ -273,10 +250,7 @@ namespace TheBox.MapViewer
 					Calculate();
 				}
 			}
-			get
-			{
-				return m_Center;
-			}
+			get => m_Center;
 		}
 
 		/// <summary>
@@ -307,7 +281,7 @@ namespace TheBox.MapViewer
 					Calculate();
 				}
 			}
-			get { return m_ControlSize; }
+			get => m_ControlSize;
 		}
 
 		/// <summary>
@@ -323,62 +297,35 @@ namespace TheBox.MapViewer
 					Calculate();
 				}
 			}
-			get
-			{
-				return m_ZoomLevel;
-			}
+			get => m_ZoomLevel;
 		}
 
 		/// <summary>
 		/// Gets the zoom level for the current map view
 		/// </summary>
-		public int Zoom
-		{
-			get
-			{
-				return m_ZoomLevel;
-			}
-		}
+		public int Zoom => m_ZoomLevel;
 
 		/// <summary>
 		/// Gets the size of the map currently displayed
 		/// </summary>
-		public Size MapSize
-		{
-			get
-			{
-				return m_MapSize;
-			}
-		}
+		public Size MapSize => m_MapSize;
 
 		/// <summary>
 		/// Gets the BlockInfo for the top left corner of the control
 		/// </summary>
-		internal BlockInfo TopLeft
-		{
-			get
-			{
-				return m_Start;
-			}
-		}
+		internal BlockInfo TopLeft => m_Start;
 
 		/// <summary>
 		/// Gets the BlockInfo for the bottom right corner of the control
 		/// </summary>
-		internal BlockInfo BottomRight
-		{
-			get
-			{
-				return m_End;
-			}
-		}
+		internal BlockInfo BottomRight => m_End;
 
 		/// <summary>
 		/// States whether the map is being drawn rotated
 		/// </summary>
 		internal bool RotateView
 		{
-			get { return m_RotateView; }
+			get => m_RotateView;
 			set
 			{
 				if ( value != m_RotateView )
@@ -392,10 +339,7 @@ namespace TheBox.MapViewer
 		/// <summary>
 		/// Gets the size of the image needed to produce the control output
 		/// </summary>
-		internal Size ImageSize
-		{
-			get { return m_ImageSize; }
-		}
+		internal Size ImageSize => m_ImageSize;
 
 		#endregion
 
@@ -749,18 +693,12 @@ namespace TheBox.MapViewer
 		/// <summary>
 		/// Gets the number of the block in the array stored in memory
 		/// </summary>
-		public int Block
-		{
-			get { return m_Block; }
-		}
+		public int Block => m_Block;
 
 		/// <summary>
 		/// Gets the number of the cell correpsonding to the pixl in the block
 		/// </summary>
-		public int Cell
-		{
-			get { return m_Cell; }
-		}
+		public int Cell => m_Cell;
 
 		public PixelCoordinate( int block, int cell )
 		{
@@ -789,60 +727,42 @@ namespace TheBox.MapViewer
 		/// <summary>
 		/// Gets the map file block number for the referenced point
 		/// </summary>
-		public int BlockNumber
-		{
-			get { return m_BlockNumber; }
-		}
+		public int BlockNumber => m_BlockNumber;
 
 		private int m_XBlock;
 
 		/// <summary>
 		/// Gets the X coordinate of the block in a block matrix
 		/// </summary>
-		public int XBlock
-		{
-			get { return m_XBlock; }
-		}
+		public int XBlock => m_XBlock;
 
 		private int m_YBlock;
 
 		/// <summary>
 		/// Gets the Y coordinate of the block in a block matrix
 		/// </summary>
-		public int YBlock
-		{
-			get { return m_YBlock; }
-		}
+		public int YBlock => m_YBlock;
 
 		private int m_Cell;
 
 		/// <summary>
 		/// Gets the number of the cell representing the referenced point
 		/// </summary>
-		public int Cell
-		{
-			get { return m_Cell; }
-		}
+		public int Cell => m_Cell;
 
 		private int m_XCell;
 
 		/// <summary>
 		/// Gets the X coordinate of the referenced point in the cells matrix
 		/// </summary>
-		public int XCell
-		{
-			get { return m_XCell; }
-		}
+		public int XCell => m_XCell;
 
 		private int m_YCell;
 
 		/// <summary>
 		/// Gets the Y coordinate of the referenced point in the cells matrix
 		/// </summary>
-		public int YCell
-		{
-			get { return m_YCell; }
-		}
+		public int YCell => m_YCell;
 
 		private Size m_MapSize;
 

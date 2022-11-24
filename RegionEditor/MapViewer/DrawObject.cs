@@ -17,7 +17,7 @@
  * http://arya.distanthost.com/
  * 
  *///////////////////////////////////////////////////////////////////////////////////////////
-using System;
+
 using System.Drawing;
 
 namespace TheBox.MapViewer.DrawObjects
@@ -80,14 +80,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public Rectangle Rectangle
 		{
-			get
-			{
-				return m_Location;
-			}
-			set
-			{
-				m_Location = value;
-			}
+			get => m_Location;
+			set => m_Location = value;
 		}
 
 		/// <summary>
@@ -95,14 +89,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public Color Color
 		{
-			get
-			{
-				return m_Color;
-			}
-			set
-			{
-				m_Color = value;
-			}
+			get => m_Color;
+			set => m_Color = value;
 		}
 
 		/// <summary>
@@ -110,14 +98,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public Color FillColor
 		{
-			get
-			{
-				return m_FillColor;
-			}
-			set
-			{
-				m_FillColor = value;
-			}
+			get => m_FillColor;
+			set => m_FillColor = value;
 		}
 		
 		/// <summary>
@@ -233,14 +215,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public Color Color
 		{
-			get
-			{
-				return m_Color;
-			}
-			set
-			{
-				m_Color = value;
-			}
+			get => m_Color;
+			set => m_Color = value;
 		}
 
 		/// <summary>
@@ -248,14 +224,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public int Length
 		{
-			get
-			{
-				return m_Length;
-			}
-			set
-			{
-				m_Length = value;
-			}
+			get => m_Length;
+			set => m_Length = value;
 		}
 
 		/// <summary>
@@ -263,14 +233,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public Point Location
 		{
-			get
-			{
-				return m_Location;
-			}
-			set
-			{
-				m_Location = value;
-			}
+			get => m_Location;
+			set => m_Location = value;
 		}
 
 		/// <summary>
@@ -373,14 +337,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public Point Location
 		{
-			get
-			{
-				return m_Location;
-			}
-			set
-			{
-				m_Location = value;
-			}
+			get => m_Location;
+			set => m_Location = value;
 		}
 
 		/// <summary>
@@ -388,14 +346,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public int Radius
 		{
-			get
-			{
-				return m_Radius;
-			}
-			set
-			{
-				m_Radius = value;
-			}
+			get => m_Radius;
+			set => m_Radius = value;
 		}
 
 		/// <summary>
@@ -403,14 +355,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public Color Color
 		{
-			get
-			{
-				return m_Color;
-			}
-			set
-			{
-				m_Color = value;
-			}
+			get => m_Color;
+			set => m_Color = value;
 		}
 
 		/// <summary>
@@ -418,14 +364,8 @@ namespace TheBox.MapViewer.DrawObjects
 		/// </summary>
 		public Color FillColor
 		{
-			get
-			{
-				return m_FillColor;
-			}
-			set
-			{
-				m_FillColor = value;
-			}
+			get => m_FillColor;
+			set => m_FillColor = value;
 		}
 
 		/// <summary>

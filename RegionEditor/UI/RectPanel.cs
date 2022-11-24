@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Windows.Forms;
 
 namespace RegionEditor
@@ -49,10 +46,7 @@ namespace RegionEditor
 		/// </summary>
 		public int X
 		{
-			get
-			{
-				return m_X;
-			}
+			get => m_X;
 			set
 			{
 				if ( value == m_X )
@@ -72,10 +66,7 @@ namespace RegionEditor
 		/// </summary>
 		public int Y
 		{
-			get
-			{
-				return m_Y;
-			}
+			get => m_Y;
 			set
 			{
 				if ( value == m_Y )
@@ -95,10 +86,7 @@ namespace RegionEditor
 		/// </summary>
 		public int RectWidth
 		{
-			get
-			{
-				return m_Width;
-			}
+			get => m_Width;
 			set
 			{
 				if ( value == m_Width )
@@ -113,10 +101,7 @@ namespace RegionEditor
 
         public int MinZ
         {
-            get
-            {
-                return m_MinZ;
-            }
+            get => m_MinZ;
             set
             {
                 if (value < -128)
@@ -131,10 +116,7 @@ namespace RegionEditor
 
         public int MaxZ
         {
-            get
-            {
-                return m_MaxZ;
-            }
+            get => m_MaxZ;
             set
             {
                 if (value < -128)
@@ -152,10 +134,7 @@ namespace RegionEditor
 		/// </summary>
 		public int RectHeight
 		{
-			get
-			{
-				return m_Height;
-			}
+			get => m_Height;
 			set
 			{
 				if ( value == m_Height )
@@ -173,10 +152,7 @@ namespace RegionEditor
 		/// </summary>
 		public Rectangle Rectangle
 		{
-			get
-			{
-				return new Rectangle( m_X, m_Y, m_Width, m_Height );
-			}
+			get => new Rectangle( m_X, m_Y, m_Width, m_Height );
 			set
 			{
 				m_Updating = true;
@@ -532,25 +508,13 @@ namespace RegionEditor
         private int m_MinZ;
         private int m_MaxZ;
 
-        public RectangleActions Action
-        {
-            get { return m_Action; }
-        }
+        public RectangleActions Action => m_Action;
 
-		public Rectangle Rectangle
-		{
-			get { return m_Rectangle; }
-		}
+        public Rectangle Rectangle => m_Rectangle;
 
-        public int MinZ
-        {
-            get { return m_MinZ; }
-        }
+        public int MinZ => m_MinZ;
 
-        public int MaxZ
-        {
-            get { return m_MaxZ; }
-        }
+        public int MaxZ => m_MaxZ;
 
         public static RectangleEventArgs DeleteRect()
         {
