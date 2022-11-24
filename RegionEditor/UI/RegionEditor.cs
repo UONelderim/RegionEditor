@@ -71,6 +71,7 @@ namespace RegionEditor
         private MenuItem mFacetMap5;
         private FlowLayoutPanel leftPanel;
         private FlowLayoutPanel lpButtonsPanel;
+        private ContextMenu RectListCm;
         private IContainer components;
 
         public RegionEditor()
@@ -423,12 +424,15 @@ namespace RegionEditor
             this.OpenFile.Filter = "Xml Files (*.xml)|*.xml";
             // 
             // RectList
-            // 
+            //
+            this.RectListCm = new ContextMenu();
+            this.RectListCm.MenuItems.Add(new MenuItem("Sort", RectList_Sort));
             this.RectList.Location = new System.Drawing.Point(3, 260);
             this.RectList.Name = "RectList";
             this.RectList.Size = new System.Drawing.Size(216, 212);
             this.RectList.TabIndex = 2;
             this.RectList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RectList_MouseDown);
+            this.RectList.ContextMenu = RectListCm;
             // 
             // ButtonZoomIn
             // 
@@ -585,6 +589,15 @@ namespace RegionEditor
             this.PerformLayout();
 
         }
+        
+        private void RectList_Sort(object sender, EventArgs e)
+        {
+            MapRegion region = Tree.SelectedNode.Tag as MapRegion;
+            region.SortAreas();
+            Tree_BeforeSelect(null, null);
+            Tree_AfterSelect(null, null);
+        }
+
         #endregion
 
         #region Application

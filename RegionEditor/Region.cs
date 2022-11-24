@@ -162,10 +162,33 @@ namespace RegionEditor
             set => m_Type = value;
         }
         #endregion
+        
 
         public int AddArea(MapRectangle3D rectangle)
         {
             return m_Area.Add(new MapRect(rectangle.Rectangle, rectangle.MinZ, rectangle.MaxZ));
+        }
+
+        private class MapRectComparer : IComparer
+        {
+            public int Compare(object x, object y)
+            {
+                var rx = x as MapRect;
+                var ry = y as MapRect;
+                if (rx == null) return -1;
+                if (ry == null) return 1;
+                var xResult = (rx.X.CompareTo(ry.X));
+                if (xResult == 0)
+                {
+                    return rx.Y.CompareTo(ry.Y);
+                }
+                return xResult;
+            }
+        }
+        
+        public void SortAreas()
+        {
+            m_Area.Sort(new MapRectComparer());
         }
 
         public MapRegion()
