@@ -31,12 +31,12 @@ namespace RegionEditor
         private MenuItem menuItem7;
         private MenuItem menuItem9;
         private MenuItem menuItem11;
-        private TreeView Tree;
+        private System.Windows.Forms.TreeView Tree;
         private OpenFileDialog OpenFile;
-        private ListBox RectList;
+        private System.Windows.Forms.ListBox RectList;
         private Button ButtonZoomIn;
         private Button ButtonZoomOut;
-        private MapViewer Map;
+        private TheBox.MapViewer.MapViewer Map;
         private Button ButtonAddFacet;
         private MenuItem FileNew;
         private MenuItem FileOpen;
@@ -144,6 +144,7 @@ namespace RegionEditor
         #endregion
 
         #region Windows Form Designer generated code
+
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -202,9 +203,7 @@ namespace RegionEditor
             // 
             // Map
             // 
-            this.Map.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Map.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.Map.Center = new System.Drawing.Point(0, 0);
             this.Map.DisplayErrors = true;
             this.Map.DrawStatics = true;
@@ -229,21 +228,12 @@ namespace RegionEditor
             // 
             // TheMenu
             // 
-            this.TheMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem1,
-            this.menuItem9,
-            this.menuItem2});
+            this.TheMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.menuItem1, this.menuItem9, this.menuItem2 });
             // 
             // menuItem1
             // 
             this.menuItem1.Index = 0;
-            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.FileNew,
-            this.menuItem6,
-            this.FileOpen,
-            this.FileSaveAs,
-            this.menuItem7,
-            this.FileExit});
+            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.FileNew, this.menuItem6, this.FileOpen, this.FileSaveAs, this.menuItem7, this.FileExit });
             this.menuItem1.Text = "File";
             // 
             // FileNew
@@ -282,12 +272,7 @@ namespace RegionEditor
             // menuItem9
             // 
             this.menuItem9.Index = 1;
-            this.menuItem9.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuAlwaysOnTop,
-            this.menuItem11,
-            this.menuChangeMulPath,
-            this.menuDrawStatics,
-            this.menuXRay});
+            this.menuItem9.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.menuAlwaysOnTop, this.menuItem11, this.menuChangeMulPath, this.menuDrawStatics, this.menuXRay });
             this.menuItem9.Text = "Options";
             this.menuItem9.Popup += new System.EventHandler(this.menuItem9_Popup);
             // 
@@ -300,13 +285,7 @@ namespace RegionEditor
             // menuItem11
             // 
             this.menuItem11.Index = 1;
-            this.menuItem11.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuMap0,
-            this.menuMap1,
-            this.menuMap2,
-            this.menuMap3,
-            this.menuMap4,
-            this.menuMap5});
+            this.menuItem11.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.menuMap0, this.menuMap1, this.menuMap2, this.menuMap3, this.menuMap4, this.menuMap5 });
             this.menuItem11.Text = "Map";
             // 
             // menuMap0
@@ -366,11 +345,7 @@ namespace RegionEditor
             // menuItem2
             // 
             this.menuItem2.Index = 2;
-            this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem3,
-            this.menuItem4,
-            this.menuItem5,
-            this.menuItem8});
+            this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.menuItem3, this.menuItem4, this.menuItem5, this.menuItem8 });
             this.menuItem2.Text = "Help";
             // 
             // menuItem3
@@ -402,6 +377,11 @@ namespace RegionEditor
             this.Tree.Name = "Tree";
             this.Tree.Size = new System.Drawing.Size(216, 216);
             this.Tree.TabIndex = 1;
+            this.Tree.AllowDrop = true;
+            this.Tree.DragOver += new DragEventHandler(this.Tree_DragOver);
+            this.Tree.DragDrop += new DragEventHandler(this.Tree_DragDrop);
+            this.Tree.DragEnter += new DragEventHandler(this.Tree_DragEnter);
+            this.Tree.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.Tree_ItemDrag);
             this.Tree.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.Tree_BeforeSelect);
             this.Tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tree_AfterSelect);
             this.Tree.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tree_MouseDown);
@@ -459,20 +439,13 @@ namespace RegionEditor
             // 
             // FacetMenu
             // 
-            this.FacetMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MenuFacetMapfile});
+            this.FacetMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.MenuFacetMapfile });
             this.FacetMenu.Popup += new System.EventHandler(this.FacetMenu_Popup);
             // 
             // MenuFacetMapfile
             // 
             this.MenuFacetMapfile.Index = 0;
-            this.MenuFacetMapfile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mFacetMap0,
-            this.mFacetMap1,
-            this.mFacetMap2,
-            this.mFacetMap3,
-            this.mFacetMap4,
-            this.mFacetMap5});
+            this.MenuFacetMapfile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.mFacetMap0, this.mFacetMap1, this.mFacetMap2, this.mFacetMap3, this.mFacetMap4, this.mFacetMap5 });
             this.MenuFacetMapfile.Text = "Set map file";
             // 
             // mFacetMap0
@@ -513,8 +486,7 @@ namespace RegionEditor
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusText});
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.StatusText });
             this.statusStrip1.Location = new System.Drawing.Point(0, 475);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
@@ -546,7 +518,6 @@ namespace RegionEditor
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
 
@@ -2207,5 +2178,83 @@ namespace RegionEditor
             }
         }
         #endregion
+
+        private void Tree_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                DoDragDrop(e.Item, DragDropEffects.Move);
+            }
+        }
+        
+        private void Tree_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private TreeNode DragTargetNode(Point targetPoint, TreeNode targetNode)
+        {
+            return targetPoint.Y > targetNode.Bounds.Top + targetNode.Bounds.Height / 2 ? targetNode.NextNode : targetNode;
+        }
+
+        private Pen blackPen = new Pen(Color.Black, 2);
+        private Graphics _graphics;
+        private Rectangle lineRegion;
+        private TreeNode dragTargetNode;
+
+        private void Tree_DragOver(object sender, DragEventArgs e)  
+        {
+            if (_graphics == null)
+            {
+                _graphics = Tree.CreateGraphics();
+            }
+            Point targetPoint = Tree.PointToClient(new Point(e.X, e.Y));
+            TreeNode newNode = DragTargetNode(targetPoint, Tree.GetNodeAt(targetPoint));
+            
+            if (newNode != null && dragTargetNode == newNode) return;
+            Tree.Invalidate(lineRegion);
+            dragTargetNode = newNode;
+            
+            Point lineStart = dragTargetNode.Bounds.Location;
+            Point lineEnd = new Point(dragTargetNode.Bounds.Right, dragTargetNode.Bounds.Top);
+            lineRegion = Rectangle.FromLTRB(lineStart.X, lineStart.Y-1, lineEnd.X, lineEnd.Y+1);
+            _graphics.DrawLine(blackPen, lineStart, lineEnd);
+        } 
+        
+        private void Tree_DragDrop(object sender, DragEventArgs e)
+        {
+            Tree.Invalidate();
+            dragTargetNode = null;
+            Point targetPoint = Tree.PointToClient(new Point(e.X, e.Y));
+            TreeNode draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
+            TreeNode targetNode = DragTargetNode(targetPoint, Tree.GetNodeAt(targetPoint));
+
+            if (draggedNode == null || draggedNode.Equals(targetNode)) return;
+            if (targetNode == null)
+            {
+                draggedNode.Remove();
+                Tree.Nodes.Add(draggedNode);
+                return;
+            }
+            TreeNode parentNode = targetNode;
+
+            bool canDrop = true;
+            while (canDrop && parentNode != null)
+            {
+                canDrop = !ReferenceEquals(draggedNode, parentNode);
+                parentNode = parentNode.Parent;
+            }
+
+            if (!canDrop) return;
+            
+            if (targetNode.Parent != null)
+            {
+                var targetIndex = DragTargetNode(targetPoint, targetNode).Index;
+                if (draggedNode.Index < targetIndex) targetIndex--;
+                draggedNode.Remove();
+                targetNode.Parent.Nodes.Insert(targetIndex, draggedNode);
+                Tree.SelectedNode = draggedNode;
+            }
+        }
     }
 }
