@@ -5,18 +5,18 @@ namespace RegionEditor
 	/// <summary>
 	/// Summary description for NewFacet.
 	/// </summary>
-	public class NewFacet : System.Windows.Forms.Form
+	public class NewFacet : Form
 	{
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.RadioButton Map0;
-		private System.Windows.Forms.RadioButton Map1;
-		private System.Windows.Forms.RadioButton Map2;
-		private System.Windows.Forms.RadioButton Map3;
-		private System.Windows.Forms.TextBox m_FacetName;
-		private System.Windows.Forms.RadioButton Map4;
+		private Button button1;
+		private Button button2;
+		private Label label1;
+		private Label label2;
+		private RadioButton Map0;
+		private RadioButton Map1;
+		private RadioButton Map2;
+		private RadioButton Map3;
+		private TextBox m_FacetName;
+		private RadioButton Map4;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -193,7 +193,7 @@ namespace RegionEditor
 			}
 
 			DialogResult = DialogResult.OK;
-			this.Close();
+			Close();
 		}
 
 		public string FacetName => m_FacetName.Text;

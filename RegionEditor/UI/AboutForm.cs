@@ -25,7 +25,7 @@ namespace RegionEditor
 			//
 			InitializeComponent();
 
-			VersionLabel.Text = string.Format( "Version: {0}", this.ProductVersion );
+			VersionLabel.Text = $"Version: {ProductVersion}";
 			LabelLicense.Text = License;
 		}
 

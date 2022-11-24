@@ -57,26 +57,26 @@ namespace TheBox.MapViewer
 				case 0:
 				case 1:
 
-					return MapSizes.FeluccaML;
+					return FeluccaML;
 
 				case 2:
 
-					return MapSizes.Ilshenar;
+					return Ilshenar;
 
 				case 3:
 
-					return MapSizes.Malas;
+					return Malas;
 
 				case 4:
 
-					return MapSizes.Tokuno;
+					return Tokuno;
 
                 case 5:
 
-                    return MapSizes.Termur;
+                    return Termur;
             }
 
-			throw new Exception( string.Format( "Map file {0} not supported", mapfile ) );
+			throw new Exception($"Map file {mapfile} not supported");
 		}
 	}
 }

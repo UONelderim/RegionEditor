@@ -376,7 +376,7 @@ namespace TheBox.MapViewer
                     m_MapSize = MapSizes.Termur;
                     break;
                 default:
-					throw new Exception( string.Format( "Map not supported: {0}.", m_Map.ToString() ) );
+					throw new Exception($"Map not supported: {m_Map.ToString()}.");
 			}
 
 			m_ControlSize = m_Viewer.Size;

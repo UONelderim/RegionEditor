@@ -8,11 +8,11 @@ namespace TheBox.Common
 	/// <summary>
 	/// Summary description for HuesChart.
 	/// </summary>
-	public class HuesChart : System.Windows.Forms.Control
+	public class HuesChart : Control
 	{
 		#region Variables
 
-		private TheBox.Mul.Hues m_Hues;
+		private Hues m_Hues;
 		private int m_SelectedIndex = 1;
 		private int m_ColorTableIndex = 28;
 
@@ -23,7 +23,7 @@ namespace TheBox.Common
 		/// <summary>
 		/// Gets or sets the Hues used on the chart
 		/// </summary>
-		public TheBox.Mul.Hues Hues
+		public Hues Hues
 		{
 			get => m_Hues;
 			set

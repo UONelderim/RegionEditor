@@ -16,12 +16,7 @@ namespace RegionEditor
 
         public static void Save(RegEdOptions Options)
         {
-            // Look for filename
-            System.Reflection.Assembly theExe = Options.GetType().Assembly;
-
-            string file = theExe.Location;
-
-            string FileName = Path.Combine(Path.GetDirectoryName(file), "RegEdOptions.xml");
+            string FileName = Path.Combine(Directory.GetCurrentDirectory(), "RegEdOptions.xml");
 
             XmlSerializer serializer = new XmlSerializer(typeof(RegEdOptions));
             FileStream theStream = new FileStream(FileName, FileMode.Create);
@@ -40,12 +35,12 @@ namespace RegionEditor
 
             string FileName = Path.Combine(Path.GetDirectoryName(file), "RegEdOptions.xml");
 
-            if (!System.IO.File.Exists(FileName))
+            if (!File.Exists(FileName))
                 return Options;
 
             // File exists
             XmlSerializer serializer = new XmlSerializer(typeof(RegEdOptions));
-            System.IO.FileStream theStream = new System.IO.FileStream(FileName, System.IO.FileMode.Open);
+            FileStream theStream = new FileStream(FileName, FileMode.Open);
             Options = (RegEdOptions)serializer.Deserialize(theStream);
             theStream.Close();
 

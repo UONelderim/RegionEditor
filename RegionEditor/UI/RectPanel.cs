@@ -7,17 +7,17 @@ namespace RegionEditor
 	/// <summary>
 	/// Summary description for RectPanel.
 	/// </summary>
-	public class RectPanel : System.Windows.Forms.UserControl
+	public class RectPanel : UserControl
 	{
-		private System.Windows.Forms.NumericUpDown NumX;
-		private System.Windows.Forms.NumericUpDown NumY;
-		private System.Windows.Forms.NumericUpDown NumWidth;
-		private System.Windows.Forms.NumericUpDown NumHeight;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Button ButtonDel;
+		private NumericUpDown NumX;
+		private NumericUpDown NumY;
+		private NumericUpDown NumWidth;
+		private NumericUpDown NumHeight;
+		private Label label1;
+		private Label label2;
+		private Label label3;
+		private Label label4;
+		private Button ButtonDel;
 		/// <summary> 
 		/// Required designer variable.
 		/// </summary>
@@ -422,7 +422,7 @@ namespace RegionEditor
 			RectangleChanged( this, e );
 		}
 
-		private void ButtonDel_Click(object sender, System.EventArgs e)
+		private void ButtonDel_Click(object sender, EventArgs e)
 		{
             RectangleEventArgs ev = RectangleEventArgs.DeleteRect();
 
@@ -431,12 +431,12 @@ namespace RegionEditor
 
 		private void ChangeRect()
 		{
-			RectangleEventArgs e = RectangleEventArgs.UpdateRect(this.Rectangle);
+			RectangleEventArgs e = RectangleEventArgs.UpdateRect(Rectangle);
 
 			OnRectangleChanged( e );
 		}
 
-		private void NumX_ValueChanged(object sender, System.EventArgs e)
+		private void NumX_ValueChanged(object sender, EventArgs e)
 		{
 			X = (int) NumX.Value;
 
@@ -444,7 +444,7 @@ namespace RegionEditor
 				ChangeRect();
 		}
 
-		private void NumY_ValueChanged(object sender, System.EventArgs e)
+		private void NumY_ValueChanged(object sender, EventArgs e)
 		{
 			Y = (int) NumY.Value;
 
@@ -452,7 +452,7 @@ namespace RegionEditor
 				ChangeRect();
 		}
 
-		private void NumWidth_ValueChanged(object sender, System.EventArgs e)
+		private void NumWidth_ValueChanged(object sender, EventArgs e)
 		{
 			RectWidth = (int) NumWidth.Value;
 
@@ -460,7 +460,7 @@ namespace RegionEditor
 				ChangeRect();
 		}
 
-		private void NumHeight_ValueChanged(object sender, System.EventArgs e)
+		private void NumHeight_ValueChanged(object sender, EventArgs e)
 		{
 			RectHeight = (int) NumHeight.Value;
 

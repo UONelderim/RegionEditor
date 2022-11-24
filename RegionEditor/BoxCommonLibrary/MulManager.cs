@@ -102,7 +102,7 @@ namespace TheBox.Common
         {
             try
             {
-                using (Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Origin Worlds Online\Ultima Online\1.0"))
+                using (RegistryKey key = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Origin Worlds Online\Ultima Online\1.0"))
                 {
                     key.SetValue("ExePath", path + @"\client.exe");
                     key.SetValue("InstCDPath", path);

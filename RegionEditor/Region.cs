@@ -247,7 +247,7 @@ namespace RegionEditor
             // Subregions
             foreach (XmlElement xRegion in xml.SelectNodes("region"))
             {
-                MapRegion sub = MapRegion.LoadRegion(xRegion);
+                MapRegion sub = LoadRegion(xRegion);
 
                 if (sub != null)
                     r.m_SubRegions.Add(sub);

@@ -5,13 +5,13 @@ namespace RegionEditor
 	/// <summary>
 	/// Summary description for FacetEditor.
 	/// </summary>
-	public class FacetPanel : System.Windows.Forms.UserControl
+	public class FacetPanel : UserControl
 	{
-		private System.Windows.Forms.Button ButtonAddRegion;
-		private System.Windows.Forms.Button ButtonDelFacet;
-		private System.Windows.Forms.CheckBox RegionFocus;
-		private System.Windows.Forms.TextBox FacetName;
-		private System.Windows.Forms.TextBox RegionName;
+		private Button ButtonAddRegion;
+		private Button ButtonDelFacet;
+		private CheckBox RegionFocus;
+		private TextBox FacetName;
+		private TextBox RegionName;
 		/// <summary> 
 		/// Required designer variable.
 		/// </summary>

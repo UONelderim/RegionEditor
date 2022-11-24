@@ -176,7 +176,7 @@ namespace TheBox.Common
 		/// <summary>
 		/// Gets/sets the flags used to extract the icon
 		/// </summary>
-		public FileIcon.SHGetFileInfoConstants Flags
+		public SHGetFileInfoConstants Flags
 		{
 			get => flags;
 			set => flags = value;
@@ -231,7 +231,7 @@ namespace TheBox.Common
 			{
 				if (shfi.hIcon != IntPtr.Zero)
 				{
-					fileIcon = System.Drawing.Icon.FromHandle(shfi.hIcon);
+					fileIcon = Icon.FromHandle(shfi.hIcon);
 					// Now owned by the GDI+ object
 					//DestroyIcon(shfi.hIcon);
 				}
@@ -288,7 +288,7 @@ namespace TheBox.Common
 		/// for</param>
 		/// <param name="flags">The flags to use when extracting the
 		/// icon and other shell information.</param>
-		public FileIcon(string fileName, FileIcon.SHGetFileInfoConstants flags)
+		public FileIcon(string fileName, SHGetFileInfoConstants flags)
 		{
 			this.fileName = fileName;
 			this.flags = flags;

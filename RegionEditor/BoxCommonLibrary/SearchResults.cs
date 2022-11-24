@@ -78,7 +78,7 @@ namespace TheBox.Common
 		/// <param name="moreResults"></param>
 		public void MergeWith( SearchResults moreResults )
 		{
-			this.m_Results.AddRange( moreResults.m_Results );
+			m_Results.AddRange( moreResults.m_Results );
 		}
 	}
 
@@ -132,10 +132,10 @@ namespace TheBox.Common
 			{
 				Result cmp = obj as Result;
 
-				if ( cmp.Node.FullPath.ToLower() == this.Node.FullPath.ToLower() )
+				if ( cmp.Node.FullPath.ToLower() == Node.FullPath.ToLower() )
 				{
 					// Issue 10 - Update the code to Net Framework 3.5 - http://code.google.com/p/pandorasbox3/issues/detail?id=10 - Smjert
-					IComparable one = ( (List<object>) this.Node.Tag )[ this.m_Index ] as IComparable;
+					IComparable one = ( (List<object>) Node.Tag )[ m_Index ] as IComparable;
 					IComparable two = ( (List<object>) cmp.Node.Tag )[ cmp.m_Index ] as IComparable;
 					// Issue 10 - End
 
@@ -143,12 +143,12 @@ namespace TheBox.Common
 				}
 				else
 				{
-					return this.Node.FullPath.CompareTo( cmp.Node.FullPath );
+					return Node.FullPath.CompareTo( cmp.Node.FullPath );
 				}
 			}
 			else
 			{
-				throw new Exception( string.Format( "Cannot compare Result to {0}", obj.GetType().Name ) );
+				throw new Exception($"Cannot compare Result to {obj.GetType().Name}");
 			}
 		}
 

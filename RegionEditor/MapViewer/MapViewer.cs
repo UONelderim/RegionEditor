@@ -100,7 +100,7 @@ namespace TheBox.MapViewer
 	/// <summary>
 	/// Ultima Online map viewer
 	/// </summary>
-	public class MapViewer : System.Windows.Forms.Control
+	public class MapViewer : Control
 	{
 		/// <summary>
 		/// Creates a MapViewer control
@@ -265,7 +265,7 @@ namespace TheBox.MapViewer
 
 			if ( !File.Exists( mapfile ) )
 			{
-				throw new FileNotFoundException( string.Format( "File {0} doens't exist. Impossible to extract the map.", mapfile ) );
+				throw new FileNotFoundException($"File {mapfile} doens't exist. Impossible to extract the map.");
 			}
 
 			bool mappatch = false;
@@ -547,7 +547,7 @@ namespace TheBox.MapViewer
 
 				string error = "Couldn't find the required files";
 
-				e.Graphics.DrawString( error, font, brush, this.Bounds, format );
+				e.Graphics.DrawString( error, font, brush, Bounds, format );
 
 				return;
 			}
@@ -562,7 +562,7 @@ namespace TheBox.MapViewer
 					base.OnPaint( e );
 
 					// Create a log and write the exception
-					string filename = this.GetType().Assembly.Location;
+					string filename = GetType().Assembly.Location;
 					string folder = Path.GetDirectoryName( filename );
 					string crashlog = Path.Combine( folder, "MapViewer crashlog.txt" );
 
@@ -579,7 +579,8 @@ namespace TheBox.MapViewer
 					StringFormat format = new StringFormat();
 					format.LineAlignment = StringAlignment.Center;
 
-					string error = string.Format( "An unexpected error occurred. A crash log has been generated at {0}. You can submit it to http://arya.distanthost.com/ for support", crashlog );
+					string error =
+						$"An unexpected error occurred. A crash log has been generated at {crashlog}. You can submit it to http://arya.distanthost.com/ for support";
 
 					e.Graphics.DrawString( error, font, brush, Bounds, format );
 
@@ -1112,9 +1113,9 @@ namespace TheBox.MapViewer
 			base.OnResize (e);
 
 			// Update the size on the view
-			m_ViewInfo.ControlSize = this.Size;
+			m_ViewInfo.ControlSize = Size;
 
-			if ( this.Created )
+			if ( Created )
 			{
 				InvalidateMap();
 			}

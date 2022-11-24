@@ -23,46 +23,46 @@ namespace RegionEditor
     /// <summary>
     /// Summary description for Form1.
     /// </summary>
-    public class RegionEditor : System.Windows.Forms.Form
+    public class RegionEditor : Form
     {
-        private System.Windows.Forms.MainMenu TheMenu;
-        private System.Windows.Forms.MenuItem menuItem1;
-        private System.Windows.Forms.MenuItem menuItem6;
-        private System.Windows.Forms.MenuItem menuItem7;
-        private System.Windows.Forms.MenuItem menuItem9;
-        private System.Windows.Forms.MenuItem menuItem11;
-        private System.Windows.Forms.TreeView Tree;
-        private System.Windows.Forms.OpenFileDialog OpenFile;
-        private System.Windows.Forms.ListBox RectList;
-        private System.Windows.Forms.Button ButtonZoomIn;
-        private System.Windows.Forms.Button ButtonZoomOut;
-        private TheBox.MapViewer.MapViewer Map;
-        private System.Windows.Forms.Button ButtonAddFacet;
-        private System.Windows.Forms.MenuItem FileNew;
-        private System.Windows.Forms.MenuItem FileOpen;
-        private System.Windows.Forms.MenuItem FileSaveAs;
-        private System.Windows.Forms.MenuItem FileExit;
-        private System.Windows.Forms.MenuItem menuAlwaysOnTop;
-        private System.Windows.Forms.MenuItem menuMap0;
-        private System.Windows.Forms.MenuItem menuMap1;
-        private System.Windows.Forms.MenuItem menuMap2;
-        private System.Windows.Forms.MenuItem menuMap3;
-        private System.Windows.Forms.MenuItem menuChangeMulPath;
-        private System.Windows.Forms.MenuItem menuDrawStatics;
-        private System.Windows.Forms.FolderBrowserDialog FolderBrowser;
-        private System.Windows.Forms.SaveFileDialog SaveFile;
-        private System.Windows.Forms.ContextMenu FacetMenu;
-        private System.Windows.Forms.MenuItem MenuFacetMapfile;
-        private System.Windows.Forms.MenuItem mFacetMap0;
-        private System.Windows.Forms.MenuItem mFacetMap1;
-        private System.Windows.Forms.MenuItem mFacetMap2;
-        private System.Windows.Forms.MenuItem mFacetMap3;
-        private System.Windows.Forms.MenuItem menuItem2;
-        private System.Windows.Forms.MenuItem menuItem3;
-        private System.Windows.Forms.MenuItem menuItem4;
-        private System.Windows.Forms.MenuItem menuItem5;
-        private System.Windows.Forms.MenuItem menuItem8;
-        private System.Windows.Forms.MenuItem menuMap4;
+        private MainMenu TheMenu;
+        private MenuItem menuItem1;
+        private MenuItem menuItem6;
+        private MenuItem menuItem7;
+        private MenuItem menuItem9;
+        private MenuItem menuItem11;
+        private TreeView Tree;
+        private OpenFileDialog OpenFile;
+        private ListBox RectList;
+        private Button ButtonZoomIn;
+        private Button ButtonZoomOut;
+        private MapViewer Map;
+        private Button ButtonAddFacet;
+        private MenuItem FileNew;
+        private MenuItem FileOpen;
+        private MenuItem FileSaveAs;
+        private MenuItem FileExit;
+        private MenuItem menuAlwaysOnTop;
+        private MenuItem menuMap0;
+        private MenuItem menuMap1;
+        private MenuItem menuMap2;
+        private MenuItem menuMap3;
+        private MenuItem menuChangeMulPath;
+        private MenuItem menuDrawStatics;
+        private FolderBrowserDialog FolderBrowser;
+        private SaveFileDialog SaveFile;
+        private ContextMenu FacetMenu;
+        private MenuItem MenuFacetMapfile;
+        private MenuItem mFacetMap0;
+        private MenuItem mFacetMap1;
+        private MenuItem mFacetMap2;
+        private MenuItem mFacetMap3;
+        private MenuItem menuItem2;
+        private MenuItem menuItem3;
+        private MenuItem menuItem4;
+        private MenuItem menuItem5;
+        private MenuItem menuItem8;
+        private MenuItem menuMap4;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel StatusText;
         private MenuItem menuXRay;
@@ -79,10 +79,10 @@ namespace RegionEditor
             // Load the path options
             SetOptions();
 
-            if (TheBox.MapViewer.MapViewer.MulFileManager.DefaultFolder == null || !TheBox.Common.Utility.ValidateUOFolder(TheBox.MapViewer.MapViewer.MulFileManager.DefaultFolder))
+            if (MapViewer.MulFileManager.DefaultFolder == null || !TheBox.Common.Utility.ValidateUOFolder(MapViewer.MulFileManager.DefaultFolder))
             {
                 //we couldn't resolve the default folder so we must use the custom folder, is it set up?
-                if (TheBox.MapViewer.MapViewer.MulFileManager.CustomFolder == null || !TheBox.Common.Utility.ValidateUOFolder(TheBox.MapViewer.MapViewer.MulFileManager.CustomFolder))
+                if (MapViewer.MulFileManager.CustomFolder == null || !TheBox.Common.Utility.ValidateUOFolder(MapViewer.MulFileManager.CustomFolder))
                 {
                     //it isn't, so let's ask the user for the folder...
                     FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
@@ -90,20 +90,20 @@ namespace RegionEditor
                     folderBrowser.ShowNewFolderButton = false;
                     if (folderBrowser.ShowDialog() == DialogResult.OK)
                     {
-                        TheBox.MapViewer.MapViewer.MulFileManager.CustomFolder = folderBrowser.SelectedPath;
+                        MapViewer.MulFileManager.CustomFolder = folderBrowser.SelectedPath;
                         m_Options.ClientPath = folderBrowser.SelectedPath;
 
                         //do we have a valid folder now?
-                        if (TheBox.MapViewer.MapViewer.MulFileManager.CustomFolder == null || !TheBox.Common.Utility.ValidateUOFolder(TheBox.MapViewer.MapViewer.MulFileManager.CustomFolder))
+                        if (MapViewer.MulFileManager.CustomFolder == null || !TheBox.Common.Utility.ValidateUOFolder(MapViewer.MulFileManager.CustomFolder))
                         {
                             MessageBox.Show("Couldn't find Ultima Online's map files.");
-                            System.Environment.Exit(0);
+                            Environment.Exit(0);
                             return;
                         }
                     }
                     else
                     {
-                        System.Environment.Exit(0);
+                        Environment.Exit(0);
                         return;
                     }
                 }
@@ -618,12 +618,12 @@ namespace RegionEditor
         /// <summary>
         /// Part 1 of the cross hair on the map (Circle)
         /// </summary>
-        private TheBox.MapViewer.DrawObjects.MapCircle m_CrossHair1 = null;
+        private MapCircle m_CrossHair1 = null;
 
         /// <summary>
         /// Part 2 of the cross hair on the map (Cross)
         /// </summary>
-        private TheBox.MapViewer.DrawObjects.MapCross m_CrossHair2 = null;
+        private MapCross m_CrossHair2 = null;
 
         /// <summary>
         /// States whether we're setting a new go location using the map
@@ -864,20 +864,20 @@ namespace RegionEditor
 
         #region Menu
 
-        private void menuItem8_Click(object sender, System.EventArgs e)
+        private void menuItem8_Click(object sender, EventArgs e)
         {
             AboutForm about = new AboutForm();
             about.ShowDialog();
         }
 
-        private void menuItem4_Click(object sender, System.EventArgs e)
+        private void menuItem4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.servuo.com");
         }
 
-        private void menuItem3_Click_1(object sender, System.EventArgs e)
+        private void menuItem3_Click_1(object sender, EventArgs e)
         {
-            string path = Path.GetDirectoryName(this.GetType().Assembly.Location);
+            string path = Path.GetDirectoryName(GetType().Assembly.Location);
             string filename = Path.Combine(path, "help.htm");
 
             if (File.Exists(filename))
@@ -886,7 +886,7 @@ namespace RegionEditor
                 MessageBox.Show("Could not locate the help file, please re-install this software to fix this error");
         }
 
-        private void FacetMenu_Popup(object sender, System.EventArgs e)
+        private void FacetMenu_Popup(object sender, EventArgs e)
         {
             int facet = (int)Tree.SelectedNode.Tag;
 
@@ -920,25 +920,25 @@ namespace RegionEditor
             }
         }
 
-        private void mFacetMap0_Click(object sender, System.EventArgs e)
+        private void mFacetMap0_Click(object sender, EventArgs e)
         {
             Tree.SelectedNode.Tag = 0;
             Map.Map = Maps.Felucca;
         }
 
-        private void mFacetMap1_Click(object sender, System.EventArgs e)
+        private void mFacetMap1_Click(object sender, EventArgs e)
         {
             Tree.SelectedNode.Tag = 1;
             Map.Map = Maps.Trammel;
         }
 
-        private void mFacetMap2_Click(object sender, System.EventArgs e)
+        private void mFacetMap2_Click(object sender, EventArgs e)
         {
             Tree.SelectedNode.Tag = 2;
             Map.Map = Maps.Ilshenar;
         }
 
-        private void mFacetMap3_Click(object sender, System.EventArgs e)
+        private void mFacetMap3_Click(object sender, EventArgs e)
         {
             Tree.SelectedNode.Tag = 3;
             Map.Map = Maps.Malas;
@@ -956,7 +956,7 @@ namespace RegionEditor
             Map.Map = Maps.Termur;
         }
 
-        private void FileSaveAs_Click(object sender, System.EventArgs e)
+        private void FileSaveAs_Click(object sender, EventArgs e)
         {
             if (SaveFile.ShowDialog() == DialogResult.OK)
             {
@@ -970,7 +970,7 @@ namespace RegionEditor
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void menuItem3_Click(object sender, System.EventArgs e)
+        private void menuItem3_Click(object sender, EventArgs e)
         {
             if (CheckModified())
             {
@@ -985,7 +985,7 @@ namespace RegionEditor
             }
         }
 
-        private void FileNew_Click(object sender, System.EventArgs e)
+        private void FileNew_Click(object sender, EventArgs e)
         {
             if (CheckModified())
             {
@@ -994,7 +994,7 @@ namespace RegionEditor
             }
         }
 
-        private void menuItem9_Popup(object sender, System.EventArgs e)
+        private void menuItem9_Popup(object sender, EventArgs e)
         {
             menuDrawStatics.Checked = Map.DrawStatics;
             menuXRay.Checked = Map.XRayView;
@@ -1027,30 +1027,30 @@ namespace RegionEditor
                     break;
             }
 
-            menuAlwaysOnTop.Checked = this.TopMost;
+            menuAlwaysOnTop.Checked = TopMost;
         }
 
-        private void menuAlwaysOnTop_Click(object sender, System.EventArgs e)
+        private void menuAlwaysOnTop_Click(object sender, EventArgs e)
         {
             TopMost = !TopMost;
         }
 
-        private void menuMap0_Click(object sender, System.EventArgs e)
+        private void menuMap0_Click(object sender, EventArgs e)
         {
             Map.Map = Maps.Felucca;
         }
 
-        private void menuMap1_Click(object sender, System.EventArgs e)
+        private void menuMap1_Click(object sender, EventArgs e)
         {
             Map.Map = Maps.Trammel;
         }
 
-        private void menuMap2_Click(object sender, System.EventArgs e)
+        private void menuMap2_Click(object sender, EventArgs e)
         {
             Map.Map = Maps.Ilshenar;
         }
 
-        private void menuMap3_Click(object sender, System.EventArgs e)
+        private void menuMap3_Click(object sender, EventArgs e)
         {
             Map.Map = Maps.Malas;
         }
@@ -1065,7 +1065,7 @@ namespace RegionEditor
             Map.Map = Maps.Termur;
         }
 
-        private void menuDrawStatics_Click(object sender, System.EventArgs e)
+        private void menuDrawStatics_Click(object sender, EventArgs e)
         {
             Map.DrawStatics = !Map.DrawStatics;
         }
@@ -1075,7 +1075,7 @@ namespace RegionEditor
             Map.XRayView = !Map.XRayView;
         }
 
-        private void menuChangeMulPath_Click(object sender, System.EventArgs e)
+        private void menuChangeMulPath_Click(object sender, EventArgs e)
         {
             if (FolderBrowser.ShowDialog() == DialogResult.OK)
             {
@@ -1155,7 +1155,7 @@ namespace RegionEditor
 
         #region Tree
 
-        private void Tree_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void Tree_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1173,7 +1173,7 @@ namespace RegionEditor
         /// <summary>
         /// Tree: BEFORE SELECT
         /// </summary>
-        private void Tree_BeforeSelect(object sender, System.Windows.Forms.TreeViewCancelEventArgs e)
+        private void Tree_BeforeSelect(object sender, TreeViewCancelEventArgs e)
         {
             // Always reset the SetGo flag
             m_SetGo = false;
@@ -1207,7 +1207,7 @@ namespace RegionEditor
             {
                 node = node.Parent;
                 if (node == null)
-                    throw new Exception(string.Format("Node {0} has no parent facet.", Tree.SelectedNode.Text));
+                    throw new Exception($"Node {Tree.SelectedNode.Text} has no parent facet.");
             }
 
             facetNode = node;
@@ -1234,11 +1234,12 @@ namespace RegionEditor
                     Map.Map = Maps.Termur;
                     break;
                 default:
-                    throw new Exception(string.Format("The {0} facet is associated with the wrong mapfile {1}", Tree.SelectedNode.Text, (int)Tree.SelectedNode.Tag));
+                    throw new Exception(
+                        $"The {Tree.SelectedNode.Text} facet is associated with the wrong mapfile {(int)Tree.SelectedNode.Tag}");
             }
         }
 
-        private void Tree_AfterSelect(object sender, System.Windows.Forms.TreeViewEventArgs e)
+        private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
         {
             // Fix colors
             Tree.SelectedNode.ForeColor = SystemColors.HighlightText;
@@ -1283,7 +1284,7 @@ namespace RegionEditor
         // MOUSE DOWN
         //
 
-        private void Map_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void Map_MouseDown(object sender, MouseEventArgs e)
         {
             // Use right button to move around map
             if (e.Button == MouseButtons.Right)
@@ -1329,7 +1330,7 @@ namespace RegionEditor
             StatusText.Text = "";
         }
 
-        private void Map_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void Map_MouseMove(object sender, MouseEventArgs e)
         {
             if (m_SetGo)
                 return;
@@ -1430,7 +1431,7 @@ namespace RegionEditor
         // MOUSE UP
         //
 
-        private void Map_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void Map_MouseUp(object sender, MouseEventArgs e)
         {
             // Left button
             if (e.Button == MouseButtons.Left)
@@ -1499,7 +1500,7 @@ namespace RegionEditor
 
         //
         // Mouse Down on the rectangles list
-        private void RectList_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void RectList_MouseDown(object sender, MouseEventArgs e)
         {
             int index = RectList.SelectedIndex;
 
@@ -1535,17 +1536,17 @@ namespace RegionEditor
             }
         }
 
-        private void ButtonZoomIn_Click(object sender, System.EventArgs e)
+        private void ButtonZoomIn_Click(object sender, EventArgs e)
         {
             Map.ZoomIn();
         }
 
-        private void ButtonZoomOut_Click(object sender, System.EventArgs e)
+        private void ButtonZoomOut_Click(object sender, EventArgs e)
         {
             Map.ZoomOut();
         }
 
-        private void ButtonAddFacet_Click(object sender, System.EventArgs e)
+        private void ButtonAddFacet_Click(object sender, EventArgs e)
         {
             NewFacet nf = new NewFacet();
 
@@ -1564,7 +1565,7 @@ namespace RegionEditor
 
         #region Events
 
-        private void RegionEditor_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void RegionEditor_Closing(object sender, CancelEventArgs e)
         {
             if (Map != null)
             {
@@ -1586,7 +1587,7 @@ namespace RegionEditor
         /// </summary>
         private void SetOptions()
         {
-            this.TopMost = m_Options.AlwaysOnTop;
+            TopMost = m_Options.AlwaysOnTop;
             if (Map != null)
             {
                 if (m_Options.ClientPath != "")
@@ -1596,7 +1597,7 @@ namespace RegionEditor
                 Map.XRayView = m_Options.XRayVision;
             }
             else if (m_Options.ClientPath != "")
-                TheBox.MapViewer.MapViewer.MulFileManager.CustomFolder = m_Options.ClientPath;
+                MapViewer.MulFileManager.CustomFolder = m_Options.ClientPath;
         }
 
         /// <summary>

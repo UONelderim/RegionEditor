@@ -9,7 +9,7 @@ namespace TheBox.Common
 	[ Serializable ]
 	public class RecentStringList
 	{
-		private System.Collections.Specialized.StringCollection m_List;
+		private StringCollection m_List;
 		private int m_Capacity;
 
 		/// <summary>

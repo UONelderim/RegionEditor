@@ -97,7 +97,7 @@ namespace TheBox.Data
 		/// <returns></returns>
 		public override string ToString()
 		{
-			return string.Format( "{0} ({1},{2},{3})", m_Name, m_X, m_Y, m_Z );
+			return $"{m_Name} ({m_X},{m_Y},{m_Z})";
 		}
 
 
@@ -113,9 +113,9 @@ namespace TheBox.Data
 			Location o = obj as Location;
 
 			if ( o == null )
-				throw new Exception( string.Format( "Cannot compare Location to {0}", obj.GetType().Name ) );
+				throw new Exception($"Cannot compare Location to {obj.GetType().Name}");
 
-			return this.m_Name.CompareTo( o.m_Name );
+			return m_Name.CompareTo( o.m_Name );
 		}
 
 		#endregion

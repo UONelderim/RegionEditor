@@ -6,25 +6,25 @@ namespace RegionEditor
 	/// <summary>
 	/// Summary description for RegionPanel.
 	/// </summary>
-	public class RegionPanel : System.Windows.Forms.UserControl
+	public class RegionPanel : UserControl
 	{
 		private int m_MapWidth;
 		private int m_MapHeight;
 
 		private bool m_Updating = false;
 
-		private System.Windows.Forms.NumericUpDown NumX;
-		private System.Windows.Forms.NumericUpDown NumY;
-		private System.Windows.Forms.NumericUpDown NumZ;
-		private System.Windows.Forms.TextBox TextBoxSubregionName;
-		private System.Windows.Forms.Button ButtonAddSubregion;
-		private System.Windows.Forms.Button ButtonDelRegion;
-		private System.Windows.Forms.Button ButtonClearRegion;
-		private System.Windows.Forms.TextBox TextBoxRegionName;
-		private System.Windows.Forms.CheckBox CheckBoxSet;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.NumericUpDown NumPriority;
-		private System.Windows.Forms.Label label2;
+		private NumericUpDown NumX;
+		private NumericUpDown NumY;
+		private NumericUpDown NumZ;
+		private TextBox TextBoxSubregionName;
+		private Button ButtonAddSubregion;
+		private Button ButtonDelRegion;
+		private Button ButtonClearRegion;
+		private TextBox TextBoxRegionName;
+		private CheckBox CheckBoxSet;
+		private Label label1;
+		private NumericUpDown NumPriority;
+		private Label label2;
         private TextBox TextBoxTypeName;
         private Label label3;
         private Label label4;
@@ -574,12 +574,12 @@ namespace RegionEditor
 			RegionChanged( this, e );
 		}
 
-		private void CheckBoxSet_Click(object sender, System.EventArgs e)
+		private void CheckBoxSet_Click(object sender, EventArgs e)
 		{
 			OnRegionChanged( RegionEventArgs.SetGo() );
 		}
 
-		private void TextBoxRegionName_TextChanged(object sender, System.EventArgs e)
+		private void TextBoxRegionName_TextChanged(object sender, EventArgs e)
 		{
 			if ( TextBoxRegionName.Text.Length == 0 )
 				return;
@@ -588,7 +588,7 @@ namespace RegionEditor
 				OnRegionChanged( RegionEventArgs.ChangeName( TextBoxRegionName.Text ) );
 		}
 
-		private void NumPriority_ValueChanged(object sender, System.EventArgs e)
+		private void NumPriority_ValueChanged(object sender, EventArgs e)
 		{
 			int val = (int) NumPriority.Value;
 
@@ -601,7 +601,7 @@ namespace RegionEditor
 				OnRegionChanged( RegionEventArgs.PriorityChange( val ) );
 		}
 
-		private void CheckBoxSet_CheckedChanged(object sender, System.EventArgs e)
+		private void CheckBoxSet_CheckedChanged(object sender, EventArgs e)
 		{
 			if ( CheckBoxSet.Checked )
 			{
@@ -610,7 +610,7 @@ namespace RegionEditor
 			}
 		}
 
-		private void ButtonDelRegion_Click(object sender, System.EventArgs e)
+		private void ButtonDelRegion_Click(object sender, EventArgs e)
 		{
 			if ( MessageBox.Show( 
 				this,
@@ -621,7 +621,7 @@ namespace RegionEditor
 				OnRegionChanged( RegionEventArgs.Delete() );
 		}
 
-		private void ButtonClearRegion_Click(object sender, System.EventArgs e)
+		private void ButtonClearRegion_Click(object sender, EventArgs e)
 		{
 			if ( MessageBox.Show( 
 				this,
@@ -632,7 +632,7 @@ namespace RegionEditor
 				OnRegionChanged( RegionEventArgs.Clear() );
 		}
 
-		private void ButtonAddSubsection_Click(object sender, System.EventArgs e)
+		private void ButtonAddSubsection_Click(object sender, EventArgs e)
 		{
 			if ( TextBoxSubregionName.Text.Length == 0 )
 			{
@@ -667,17 +667,17 @@ namespace RegionEditor
 				OnRegionChanged( RegionEventArgs.ChangeGo( x, y, z ) );
 		}
 
-		private void NumX_ValueChanged(object sender, System.EventArgs e)
+		private void NumX_ValueChanged(object sender, EventArgs e)
 		{
 			ChangePos();
 		}
 
-		private void NumY_ValueChanged(object sender, System.EventArgs e)
+		private void NumY_ValueChanged(object sender, EventArgs e)
 		{
 			ChangePos();
 		}
 
-		private void NumZ_ValueChanged(object sender, System.EventArgs e)
+		private void NumZ_ValueChanged(object sender, EventArgs e)
 		{
 			ChangePos();
 		}
