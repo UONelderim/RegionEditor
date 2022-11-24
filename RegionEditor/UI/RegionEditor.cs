@@ -69,6 +69,8 @@ namespace RegionEditor
         private MenuItem menuMap5;
         private MenuItem mFacetMap4;
         private MenuItem mFacetMap5;
+        private FlowLayoutPanel leftPanel;
+        private FlowLayoutPanel lpButtonsPanel;
         private IContainer components;
 
         public RegionEditor()
@@ -198,12 +200,18 @@ namespace RegionEditor
             this.mFacetMap5 = new System.Windows.Forms.MenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.leftPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.lpButtonsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.statusStrip1.SuspendLayout();
+            this.leftPanel.SuspendLayout();
+            this.lpButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Map
             // 
-            this.Map.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.Map.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Map.Center = new System.Drawing.Point(0, 0);
             this.Map.DisplayErrors = true;
             this.Map.DrawStatics = true;
@@ -228,12 +236,21 @@ namespace RegionEditor
             // 
             // TheMenu
             // 
-            this.TheMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.menuItem1, this.menuItem9, this.menuItem2 });
+            this.TheMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem1,
+            this.menuItem9,
+            this.menuItem2});
             // 
             // menuItem1
             // 
             this.menuItem1.Index = 0;
-            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.FileNew, this.menuItem6, this.FileOpen, this.FileSaveAs, this.menuItem7, this.FileExit });
+            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.FileNew,
+            this.menuItem6,
+            this.FileOpen,
+            this.FileSaveAs,
+            this.menuItem7,
+            this.FileExit});
             this.menuItem1.Text = "File";
             // 
             // FileNew
@@ -272,7 +289,12 @@ namespace RegionEditor
             // menuItem9
             // 
             this.menuItem9.Index = 1;
-            this.menuItem9.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.menuAlwaysOnTop, this.menuItem11, this.menuChangeMulPath, this.menuDrawStatics, this.menuXRay });
+            this.menuItem9.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuAlwaysOnTop,
+            this.menuItem11,
+            this.menuChangeMulPath,
+            this.menuDrawStatics,
+            this.menuXRay});
             this.menuItem9.Text = "Options";
             this.menuItem9.Popup += new System.EventHandler(this.menuItem9_Popup);
             // 
@@ -285,7 +307,13 @@ namespace RegionEditor
             // menuItem11
             // 
             this.menuItem11.Index = 1;
-            this.menuItem11.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.menuMap0, this.menuMap1, this.menuMap2, this.menuMap3, this.menuMap4, this.menuMap5 });
+            this.menuItem11.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuMap0,
+            this.menuMap1,
+            this.menuMap2,
+            this.menuMap3,
+            this.menuMap4,
+            this.menuMap5});
             this.menuItem11.Text = "Map";
             // 
             // menuMap0
@@ -345,7 +373,11 @@ namespace RegionEditor
             // menuItem2
             // 
             this.menuItem2.Index = 2;
-            this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.menuItem3, this.menuItem4, this.menuItem5, this.menuItem8 });
+            this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem3,
+            this.menuItem4,
+            this.menuItem5,
+            this.menuItem8});
             this.menuItem2.Text = "Help";
             // 
             // menuItem3
@@ -373,17 +405,17 @@ namespace RegionEditor
             // 
             // Tree
             // 
-            this.Tree.Location = new System.Drawing.Point(8, 8);
+            this.Tree.AllowDrop = true;
+            this.Tree.Location = new System.Drawing.Point(3, 3);
             this.Tree.Name = "Tree";
             this.Tree.Size = new System.Drawing.Size(216, 216);
             this.Tree.TabIndex = 1;
-            this.Tree.AllowDrop = true;
-            this.Tree.DragOver += new DragEventHandler(this.Tree_DragOver);
-            this.Tree.DragDrop += new DragEventHandler(this.Tree_DragDrop);
-            this.Tree.DragEnter += new DragEventHandler(this.Tree_DragEnter);
             this.Tree.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.Tree_ItemDrag);
             this.Tree.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.Tree_BeforeSelect);
             this.Tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tree_AfterSelect);
+            this.Tree.DragDrop += new System.Windows.Forms.DragEventHandler(this.Tree_DragDrop);
+            this.Tree.DragEnter += new System.Windows.Forms.DragEventHandler(this.Tree_DragEnter);
+            this.Tree.DragOver += new System.Windows.Forms.DragEventHandler(this.Tree_DragOver);
             this.Tree.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tree_MouseDown);
             // 
             // OpenFile
@@ -392,7 +424,7 @@ namespace RegionEditor
             // 
             // RectList
             // 
-            this.RectList.Location = new System.Drawing.Point(8, 264);
+            this.RectList.Location = new System.Drawing.Point(3, 260);
             this.RectList.Name = "RectList";
             this.RectList.Size = new System.Drawing.Size(216, 212);
             this.RectList.TabIndex = 2;
@@ -401,7 +433,7 @@ namespace RegionEditor
             // ButtonZoomIn
             // 
             this.ButtonZoomIn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ButtonZoomIn.Location = new System.Drawing.Point(160, 232);
+            this.ButtonZoomIn.Location = new System.Drawing.Point(143, 3);
             this.ButtonZoomIn.Name = "ButtonZoomIn";
             this.ButtonZoomIn.Size = new System.Drawing.Size(64, 23);
             this.ButtonZoomIn.TabIndex = 3;
@@ -411,7 +443,7 @@ namespace RegionEditor
             // ButtonZoomOut
             // 
             this.ButtonZoomOut.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ButtonZoomOut.Location = new System.Drawing.Point(88, 232);
+            this.ButtonZoomOut.Location = new System.Drawing.Point(73, 3);
             this.ButtonZoomOut.Name = "ButtonZoomOut";
             this.ButtonZoomOut.Size = new System.Drawing.Size(64, 23);
             this.ButtonZoomOut.TabIndex = 4;
@@ -421,7 +453,7 @@ namespace RegionEditor
             // ButtonAddFacet
             // 
             this.ButtonAddFacet.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ButtonAddFacet.Location = new System.Drawing.Point(8, 232);
+            this.ButtonAddFacet.Location = new System.Drawing.Point(3, 3);
             this.ButtonAddFacet.Name = "ButtonAddFacet";
             this.ButtonAddFacet.Size = new System.Drawing.Size(64, 23);
             this.ButtonAddFacet.TabIndex = 6;
@@ -439,13 +471,20 @@ namespace RegionEditor
             // 
             // FacetMenu
             // 
-            this.FacetMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.MenuFacetMapfile });
+            this.FacetMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.MenuFacetMapfile});
             this.FacetMenu.Popup += new System.EventHandler(this.FacetMenu_Popup);
             // 
             // MenuFacetMapfile
             // 
             this.MenuFacetMapfile.Index = 0;
-            this.MenuFacetMapfile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.mFacetMap0, this.mFacetMap1, this.mFacetMap2, this.mFacetMap3, this.mFacetMap4, this.mFacetMap5 });
+            this.MenuFacetMapfile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mFacetMap0,
+            this.mFacetMap1,
+            this.mFacetMap2,
+            this.mFacetMap3,
+            this.mFacetMap4,
+            this.mFacetMap5});
             this.MenuFacetMapfile.Text = "Set map file";
             // 
             // mFacetMap0
@@ -486,7 +525,8 @@ namespace RegionEditor
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.StatusText });
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusText});
             this.statusStrip1.Location = new System.Drawing.Point(0, 475);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
@@ -498,26 +538,52 @@ namespace RegionEditor
             this.StatusText.Name = "StatusText";
             this.StatusText.Size = new System.Drawing.Size(0, 17);
             // 
+            // leftPanel
+            // 
+            this.leftPanel.AutoSize = true;
+            this.leftPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
+            this.leftPanel.Controls.Add(this.Tree);
+            this.leftPanel.Controls.Add(this.lpButtonsPanel);
+            this.leftPanel.Controls.Add(this.RectList);
+            this.leftPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.leftPanel.Location = new System.Drawing.Point(4, 1);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(222, 475);
+            this.leftPanel.TabIndex = 8;
+            this.leftPanel.WrapContents = false;
+            // 
+            // lpButtonsPanel
+            // 
+            this.lpButtonsPanel.AutoSize = true;
+            this.lpButtonsPanel.Controls.Add(this.ButtonAddFacet);
+            this.lpButtonsPanel.Controls.Add(this.ButtonZoomOut);
+            this.lpButtonsPanel.Controls.Add(this.ButtonZoomIn);
+            this.lpButtonsPanel.Location = new System.Drawing.Point(3, 225);
+            this.lpButtonsPanel.Name = "lpButtonsPanel";
+            this.lpButtonsPanel.Size = new System.Drawing.Size(210, 29);
+            this.lpButtonsPanel.TabIndex = 2;
+            // 
             // RegionEditor
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(800, 497);
+            this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.ButtonAddFacet);
-            this.Controls.Add(this.ButtonZoomOut);
-            this.Controls.Add(this.ButtonZoomIn);
-            this.Controls.Add(this.RectList);
-            this.Controls.Add(this.Tree);
             this.Controls.Add(this.Map);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.TheMenu;
             this.Name = "RegionEditor";
             this.Text = "Region Editor";
             this.Closing += new System.ComponentModel.CancelEventHandler(this.RegionEditor_Closing);
+            this.Resize += new System.EventHandler(this.RegionEditor_Resize);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.leftPanel.ResumeLayout(false);
+            this.leftPanel.PerformLayout();
+            this.lpButtonsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 
@@ -2255,6 +2321,15 @@ namespace RegionEditor
                 targetNode.Parent.Nodes.Insert(targetIndex, draggedNode);
                 Tree.SelectedNode = draggedNode;
             }
+        }
+
+        private void RegionEditor_Resize(object sender, EventArgs e)
+        {
+            int buttonSize = ButtonZoomIn.Height;
+            int totalHeight = Height;
+            int leftHeight = totalHeight - buttonSize - 226;
+            Tree.Height = leftHeight / 2;
+            RectList.Height = totalHeight / 2;
         }
     }
 }
