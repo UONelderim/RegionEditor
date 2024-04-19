@@ -1207,11 +1207,6 @@ namespace TheBox.MapViewer
 				}
 				else
 				{
-					if ( map == Maps.Trammel && ( MulType == MulFileType.Map || MulType == MulFileType.Staidx || MulType == MulFileType.Statics ) )
-					{
-						map = Maps.Felucca;
-					}
-
 					return m_MulManager[ "{0}{1}.mul", MulType.ToString(), (int) map ];
 				}
 			}
