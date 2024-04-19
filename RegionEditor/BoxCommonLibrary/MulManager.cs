@@ -6,6 +6,8 @@ using System.Collections.Specialized;
 using System.Windows.Forms;
 using TheBox.CustomMessageBox;
 using Microsoft.Win32;
+using RegionEditor;
+
 // Issues 43 - End
 
 namespace TheBox.Common
@@ -131,17 +133,29 @@ namespace TheBox.Common
         /// </summary>
         public MulManager()
         {
+            var options = RegEdOptions.Load();
 
-            m_2DFolder = GetExePath("Ultima Online");
-
-            // Issues 43 - Problems when the client path isn't found - http://code.google.com/p/pandorasbox3/issues/detail?id=43 - Smjert
-
-            if (m_2DFolder == null && !FixClientPath())
+            m_2DFolder = options.ClientPath;
+            if (m_2DFolder == null)
             {
-                ErrMsgBox.Show("Impossible to load .mul files", "Error");
-                Environment.Exit(1);
+                FolderBrowserDialog fdialog = new FolderBrowserDialog();
+                DialogResult result = fdialog.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    m_2DFolder = fdialog.SelectedPath;
+                }
+
+                if (m_2DFolder != null)
+                {
+                    options.ClientPath = m_2DFolder;
+                    RegEdOptions.Save(options);
+                }
+                else
+                {
+                    ErrMsgBox.Show("Impossible to load .mul files", "Error");
+                    Environment.Exit(1);
+                }
             }
-            // Issues 43 - End
 
             m_Table = new NameValueCollection();
         }
